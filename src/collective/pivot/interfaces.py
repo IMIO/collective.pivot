@@ -14,3 +14,4 @@ class ICollectivePivotLayer(IDefaultBrowserLayer):
 class ICollectivePivotSettings(Interface):
 
     ws_url = schema.TextLine(title=_(u"Webservice url"), required=True)
+    ws_key = schema.TextLine(title=_(u"Webservice (header) key"), required=True)
