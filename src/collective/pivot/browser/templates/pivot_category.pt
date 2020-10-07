@@ -1,0 +1,23 @@
+<html
+  xmlns="http://www.w3.org/1999/xhtml"
+  xml:lang="en"
+  xmlns:tal="http://xml.zope.org/namespaces/tal"
+  xmlns:metal="http://xml.zope.org/namespaces/metal"
+  xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+  lang="en"
+  metal:use-macro="context/main_template/macros/master"
+  i18n:domain="collective.pivot">
+  <body>
+    <metal:main fill-slot="content-core">
+         <div id="root" tal:attributes="data-wsurl view/full_url_query;
+                                        data-wskey view/ws_key">
+         </div>
+         <script type="text/javascript" tal:attributes="src string:${context/@@plone_portal_state/portal_url}/++resource++collective.pivot/js/react.production.min.js"></script>
+         <script type="text/javascript" tal:attributes="src string:${context/@@plone_portal_state/portal_url}/++resource++collective.pivot/js/react-dom.production.min.js"></script>
+         <script type="text/javascript" tal:attributes="src string:${context/@@plone_portal_state/portal_url}/++resource++collective.pivot/js/PivotCategory.js"></script>
+    </metal:main>
+    <!--
+    curl --location --request GET 'https://pivotweb.tourismewallonie.be/PivotWeb-3.1/query/OTH-A0-003P-2PWS;content=1;fmt=json' --header 'ws_key: 1b24b1ce-3c3f-405f-8881-56721a0017b3'
+    -->
+  </body>
+</html>

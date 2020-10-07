@@ -12,10 +12,18 @@
       />
 
   <!-- Publish static files -->
-  <plone:static
+  <browser:resourceDirectory
       name="collective.pivot"
-      type="plone"
       directory="static"
+      />
+
+  <browser:page
+      name="view"
+      for="collective.pivot.content.pivot_category.IPivotCategory"
+      class=".pivot_category.PivotCategoryView"
+      template="templates/pivot_category.pt"
+      layer="collective.pivot.interfaces.ICollectivePivotLayer"
+      permission="zope2.View"
       />
 
 </configure>
