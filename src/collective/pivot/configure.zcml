@@ -25,6 +25,14 @@
       />
 
   <genericsetup:registerProfile
+      name="content"
+      title="Add collective.pivot content"
+      directory="profiles/content"
+      description="Add default categories for collective.pivot"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+  <genericsetup:registerProfile
       name="uninstall"
       title="collective.pivot (uninstall)"
       directory="profiles/uninstall"
