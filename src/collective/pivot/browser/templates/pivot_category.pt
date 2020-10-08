@@ -9,15 +9,23 @@
   i18n:domain="collective.pivot">
   <body>
     <metal:main fill-slot="content-core">
-         <div id="root" tal:attributes="data-wsurl view/full_url_query;
-                                        data-wskey view/ws_key">
-         </div>
-         <script type="text/javascript" tal:attributes="src string:${context/@@plone_portal_state/portal_url}/++resource++collective.pivot/js/react.production.min.js"></script>
-         <script type="text/javascript" tal:attributes="src string:${context/@@plone_portal_state/portal_url}/++resource++collective.pivot/js/react-dom.production.min.js"></script>
-         <script type="text/javascript" tal:attributes="src string:${context/@@plone_portal_state/portal_url}/++resource++collective.pivot/js/PivotCategory.js"></script>
+      <tal:def define="config view/test_config;
+                         portal_url context/@@plone_portal_state/portal_url">
+        <tal:if condition="config">
+          <div id="root" tal:attributes="data-query_url view/query_url;
+                                               data-thesaurus_url view/thesaurus_url;
+                                               data-ws_key view/ws_key"></div>
+          <script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++collective.pivot/js/react.production.min.js"></script>
+          <script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++collective.pivot/js/react-dom.production.min.js"></script>
+          <script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++collective.pivot/js/PivotCategory.js"></script>
+        </tal:if>
+        <tal:else condition="not:config">
+          <p>
+            <span i18n:translate="">Your configuration is not complete.</span><br/>
+            <a i18n:translate="" tal:attributes="href string:${portal_url}/@@pivot-controlpanel">Click here to complete setup.</a>
+          </p>
+        </tal:else>
+      </tal:def>
     </metal:main>
-    <!--
-    curl --location --request GET 'https://pivotweb.tourismewallonie.be/PivotWeb-3.1/query/OTH-A0-003P-2PWS;content=1;fmt=json' --header 'ws_key: 1b24b1ce-3c3f-405f-8881-56721a0017b3'
-    -->
   </body>
 </html>
