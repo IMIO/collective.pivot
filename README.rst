@@ -1,52 +1,10 @@
-.. This README is meant for consumption by humans and pypi. Pypi can render rst files so please do not use Sphinx features.
-   If you want to learn more about writing documentation, please check out: http://docs.plone.org/about/documentation_styleguide.html
-   This text does not appear on pypi or github. It is a comment.
-
-.. image:: https://travis-ci.org/collective/collective.pivot.svg?branch=master
-    :target: https://travis-ci.org/collective/collective.pivot
-
-.. image:: https://coveralls.io/repos/github/collective/collective.pivot/badge.svg?branch=master
-    :target: https://coveralls.io/github/collective/collective.pivot?branch=master
-    :alt: Coveralls
-
-.. image:: https://img.shields.io/pypi/v/collective.pivot.svg
-    :target: https://pypi.python.org/pypi/collective.pivot/
-    :alt: Latest Version
-
-.. image:: https://img.shields.io/pypi/status/collective.pivot.svg
-    :target: https://pypi.python.org/pypi/collective.pivot
-    :alt: Egg Status
-
-.. image:: https://img.shields.io/pypi/pyversions/collective.pivot.svg?style=plastic   :alt: Supported - Python Versions
-
-.. image:: https://img.shields.io/pypi/l/collective.pivot.svg
-    :target: https://pypi.python.org/pypi/collective.pivot/
-    :alt: License
-
-
 ================
 collective.pivot
 ================
 
-Tell me what your product does
-
-Features
---------
-
-- Can be bullet points
-
-
-Examples
---------
-
-This add-on can be seen in action at the following sites:
-- Is there a page on the internet where everybody can see the features?
-
-
-Documentation
--------------
-
-Full documentation for end users can be found in the "docs" folder, and is also available online at http://docs.plone.org/foo/bar
+Plone plugin which makes a connection to the CGT's DB PIVOT.
+This one display listing and details of various tourist offers.
+It's also possible to add filters.
 
 
 Translations
@@ -54,7 +12,7 @@ Translations
 
 This product has been translated into
 
-- Klingon (thanks, K'Plai)
+- French
 
 
 Installation
@@ -76,16 +34,8 @@ and then running ``bin/buildout``
 Contribute
 ----------
 
-- Issue Tracker: https://github.com/collective/collective.pivot/issues
-- Source Code: https://github.com/collective/collective.pivot
-- Documentation: https://docs.plone.org/foo/bar
-
-
-Support
--------
-
-If you are having issues, please let us know.
-We have a mailing list located at: project@example.com
+- Issue Tracker: https://github.com/imio/collective.pivot/issues
+- Source Code: https://github.com/imio/collective.pivot
 
 
 License
