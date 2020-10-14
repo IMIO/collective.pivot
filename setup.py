@@ -57,6 +57,7 @@ setup(
         'plone.app.relationfield',
         'plone.app.lockingbehavior',
         'plone.schema',
+        'requests',
     ],
     extras_require={
         'test': [
