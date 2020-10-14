@@ -4,6 +4,7 @@ from plone.registry.interfaces import IRegistry
 from plone.rest import Service
 from zope.component import getUtility
 
+import json
 import requests
 
 
@@ -27,7 +28,13 @@ class PivotEndpointGet(Service):
         total_datas = len(formated_datas)
         if total_datas != items.get("count"):
             raise AssertionError("Missing some datas")
-        return {"items": formated_datas, "items_total": total_datas}
+        self.request.response.setHeader("Content-Type", "application/json")
+        return json.dumps(
+            {"items": formated_datas, "items_total": total_datas},
+            indent=2,
+            sort_keys=True,
+            separators=(", ", ": "),
+        )
 
     def getTypeOffre(self, offre):
         type_offre = offre.get("typeOffre")
