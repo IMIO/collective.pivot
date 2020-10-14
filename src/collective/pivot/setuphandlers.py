@@ -34,7 +34,10 @@ def uninstall(context):
 
 def add_default_categories(context):
     """Add Pivot categories"""
-    add_category(context, "urn:fam:1", _("Hosting", context=context))
-    add_category(context, "urn:fam:2", _("Leisure / discovery", context=context))
-    add_category(context, "urn:fam:3", _("Tourism organizations", context=context))
-    add_category(context, "urn:fam:6", _("Terroir", context=context))
+    add_category(context, "OTH-A0-003P-2PWS", _("Hosting", context=context))
+    add_category(context, "OTH-A0-003P-2QH4", _("Leisure / discovery", context=context))
+    add_category(
+        context, "OTH-A0-003P-2QHT", _("Tourism organizations", context=context)
+    )
+    add_category(context, "OTH-A0-003P-2QHH", _("Terroir", context=context))
+    add_category(context, "OTH-A0-003P-2QL2", _("Events", context=context))
