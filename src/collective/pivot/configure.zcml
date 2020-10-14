@@ -46,6 +46,12 @@
       name="collective.pivot-hiddenprofiles"
       />
 
+  <utility
+      component=".vocabularies.familyvocabulary"
+      name="collective.pivot.vocabularies.family_vocabulary"
+      provides="zope.schema.interfaces.IVocabularyFactory"
+  />
+
   <!-- -*- extra stuff goes here -*- -->
 
 </configure>
