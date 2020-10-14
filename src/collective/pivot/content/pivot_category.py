@@ -11,7 +11,11 @@ class IPivotCategory(model.Schema):
     """ Marker interface for PivotCategory
     """
 
-    category_id = schema.TextLine(title=_(u"Category id"), required=True)
+    category_id = schema.Choice(
+        title=_(u"Category id"),
+        required=True,
+        vocabulary="collective.pivot.vocabularies.family_vocabulary",
+    )
     zip_codes = schema.List(
         title=_(u"Zip codes"),
         description=_(
