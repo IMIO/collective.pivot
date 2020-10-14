@@ -33,4 +33,13 @@
       permission="zope2.View"
       />
 
+  <plone:service
+      name="@pivot"
+      method="GET"
+      accept="application/json"
+      for="collective.pivot.content.pivot_category.IPivotCategory"
+      factory=".pivot_endpoint.PivotEndpointGet"
+      permission="zope2.View"
+    />
+
 </configure>
