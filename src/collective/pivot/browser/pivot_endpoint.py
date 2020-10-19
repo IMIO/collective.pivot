@@ -10,7 +10,10 @@ from zope.interface import implementer
 from zope.interface import Interface
 
 import json
+import logging
 import requests
+
+logger = logging.getLogger("Plone")
 
 
 @implementer(IExpandableElement)
@@ -46,16 +49,22 @@ class PivotEndpoint(object):
     def treatResult(self, results):
         formated_datas = []
         for offre in results.get("offre"):
-            sheet = {
-                u"title": offre.get("nom"),
-                u"latitude": offre.get("adresse1").get("latitude"),
-                u"longitude": offre.get("adresse1").get("longitude"),
-                u"offer": {
-                    u"offerID": offre.get("relOffre")[0].get("offre").get("codeCgt"),
-                    u"offerTypeId": self.getTypeOffre(offre).get("offerTypeId"),
-                    u"offerTypeLabel": self.getTypeOffre(offre).get("offerTypeLabel"),
-                },
-            }
+            try:
+                offer_id = None
+                if offre.get("relOffre") is not None:
+                    offer_id = offre.get("relOffre")[0].get("offre").get("codeCgt")
+                sheet = {
+                    u"title": offre.get("nom"),
+                    u"latitude": offre.get("adresse1").get("latitude"),
+                    u"longitude": offre.get("adresse1").get("longitude"),
+                    u"offer": {
+                        u"offerID": offer_id,
+                        u"offerTypeId": self.getTypeOffre(offre).get("offerTypeId"),
+                        u"offerTypeLabel": self.getTypeOffre(offre).get("offerTypeLabel"),
+                    },
+                }
+            except Exception, e:
+                logger.exception(e)
             formated_datas.append(sheet)
         total_datas = len(formated_datas)
         self.request.response.setHeader("Content-Type", "application/json")
