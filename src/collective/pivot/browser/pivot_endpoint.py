@@ -34,22 +34,27 @@ class PivotEndpoint(object):
 
     def getTypeOffre(self, offre):
         type_offre = offre.get("typeOffre")
+        type_offre_id = offre.get("typeOffre").get("idTypeOffre")
         gen = (
             label
             for label in type_offre.get("label")
             if label.get("lang") == self.language
         )
         label = next(gen).get("value")
-        return label
+        return {"offerTypeId": type_offre_id, "offerTypeLabel": label}
 
     def treatResult(self, results):
         formated_datas = []
         for offre in results.get("offre"):
             sheet = {
                 u"title": offre.get("nom"),
-                u"type": self.getTypeOffre(offre),
                 u"latitude": offre.get("adresse1").get("latitude"),
                 u"longitude": offre.get("adresse1").get("longitude"),
+                u"offer": {
+                    u"offerID": offre.get("relOffre")[0].get("offre").get("codeCgt"),
+                    u"offerTypeId": self.getTypeOffre(offre).get("offerTypeId"),
+                    u"offerTypeLabel": self.getTypeOffre(offre).get("offerTypeLabel"),
+                },
             }
             formated_datas.append(sheet)
         total_datas = len(formated_datas)
