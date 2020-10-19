@@ -13,7 +13,7 @@
                          portal_url context/@@plone_portal_state/portal_url">
         <tal:if condition="config">
           <div id="root" tal:attributes="data-pivot_query_url view/query_url;
-                                         data-local_query_url string:${portal_url}/@pivot;
+                                         data-local_query_url view/local_query_url;
                                          data-thesaurus_url view/thesaurus_url;
                                          data-ws_key view/ws_key"></div>
           <script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++collective.pivot/js/react.production.min.js"></script>

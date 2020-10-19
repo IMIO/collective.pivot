@@ -22,6 +22,10 @@ class PivotCategoryView(BrowserView):
         )
 
     @property
+    def local_query_url(self):
+        return "{}/@pivot".format(self.context.absolute_url())
+
+    @property
     def thesaurus_url(self):
         """
         https://pivotweb.tourismewallonie.be/PivotWeb-3.1/thesaurus/family/urn:fam:1;pretty=true;fmt=json
