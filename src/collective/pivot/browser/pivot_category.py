@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from collective.pivot.browser.controlpanel import IPivotSettings
+from collective.pivot.config import getQueryCodeByUrn
 from plone.registry.interfaces import IRegistry
 from Products.Five import BrowserView
 from zope.component import getUtility
@@ -19,6 +20,8 @@ class PivotCategoryView(BrowserView):
         cp = "cp:{}".format("|".join(self.zip_codes))
         return "{}query/{};content=1;pretty=true;fmt=json;param={}".format(
             self.ws_url, self.context.family, cp
+        pivot_query = "{}query/{};content=1;pretty=true;fmt=json;param={}".format(
+            self.ws_url, getQueryCodeByUrn(self.context.family), cp
         )
 
     @property
