@@ -1,40 +1,36 @@
 # -*- coding: utf-8 -*-
 from collective.pivot.browser.controlpanel import IPivotSettings
+from collective.pivot.config import getQueryCodeByUrn
 from plone.registry.interfaces import IRegistry
 from plone.rest import Service
+from plone.restapi.interfaces import IExpandableElement
+from zope.component import adapter
 from zope.component import getUtility
+from zope.interface import implementer
+from zope.interface import Interface
 
 import json
 import requests
 
 
-class PivotEndpointGet(Service):
+@implementer(IExpandableElement)
+@adapter(Interface, Interface)
+class PivotEndpoint(object):
 
     language = "fr"
 
-    def render(self):
+    def __init__(self, context, request):
+        self.context = context
+        self.request = request
+
+    def __call__(self):
+        results = self.getResult()
+        return self.treatResult(results)
+
+    def getResult(self):
         headers = {"Accept": "application/json", "ws_key": self.settings.ws_key}
-        results = requests.get(self.query_url, headers=headers)
-        items = results.json()
-        formated_datas = []
-        for offre in items.get("offre"):
-            sheet = {
-                "title": offre.get("nom"),
-                "category": self.getTypeOffre(offre),
-                "latitude": offre.get("adresse1").get("latitude"),
-                "longitude": offre.get("adresse1").get("longitude"),
-            }
-            formated_datas.append(sheet)
-        total_datas = len(formated_datas)
-        if total_datas != items.get("count"):
-            raise AssertionError("Missing some datas")
-        self.request.response.setHeader("Content-Type", "application/json")
-        return json.dumps(
-            {"items": formated_datas, "items_total": total_datas},
-            indent=2,
-            sort_keys=True,
-            separators=(", ", ": "),
-        )
+        result = requests.get(self.query_url, headers=headers)
+        return result.json()
 
     def getTypeOffre(self, offre):
         type_offre = offre.get("typeOffre")
@@ -46,6 +42,20 @@ class PivotEndpointGet(Service):
         label = next(gen).get("value")
         return label
 
+    def treatResult(self, results):
+        formated_datas = []
+        for offre in results.get("offre"):
+            sheet = {
+                u"title": offre.get("nom"),
+                u"type": self.getTypeOffre(offre),
+                u"latitude": offre.get("adresse1").get("latitude"),
+                u"longitude": offre.get("adresse1").get("longitude"),
+            }
+            formated_datas.append(sheet)
+        total_datas = len(formated_datas)
+        self.request.response.setHeader("Content-Type", "application/json")
+        return {u"items": formated_datas, u"items_total": total_datas}
+
     @property
     def settings(self):
         registry = getUtility(IRegistry)
@@ -55,7 +65,7 @@ class PivotEndpointGet(Service):
     def query_url(self):
         cp = "cp:{}".format("|".join(self.zip_codes))
         return "{}query/{};content=1;pretty=true;fmt=json;param={}".format(
-            self.ws_url, self.context.category_id, cp
+            self.ws_url, getQueryCodeByUrn(self.context.family), cp
         )
 
     @property
@@ -82,3 +92,11 @@ class PivotEndpointGet(Service):
         if self.ws_key is None:
             return False
         return True
+
+
+class PivotEndpointGet(Service):
+    def render(self):
+        related_items = PivotEndpoint(self.context, self.request)
+        return json.dumps(
+            related_items(), indent=2, sort_keys=True, separators=(", ", ": "),
+        )
