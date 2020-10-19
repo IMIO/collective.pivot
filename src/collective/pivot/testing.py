@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
+from collective.pivot.browser.controlpanel import IPivotSettings
+from plone import api
 from plone.app.robotframework.testing import REMOTE_LIBRARY_BUNDLE_FIXTURE
 from plone.app.testing import (
     applyProfile,
     FunctionalTesting,
     IntegrationTesting,
-    PLONE_FIXTURE
+    PLONE_FIXTURE,
     PloneSandboxLayer,
 )
 from plone.testing import z2
@@ -21,27 +23,30 @@ class CollectivePivotLayer(PloneSandboxLayer):
         # The z3c.autoinclude feature is disabled in the Plone fixture base
         # layer.
         import plone.app.dexterity
+
         self.loadZCML(package=plone.app.dexterity)
         import plone.restapi
+
         self.loadZCML(package=plone.restapi)
         self.loadZCML(package=collective.pivot)
 
     def setUpPloneSite(self, portal):
-        applyProfile(portal, 'collective.pivot:default')
+        applyProfile(portal, "collective.pivot:default")
+        api.portal.set_registry_record("zip_codes", [u"5530"], interface=IPivotSettings)
+        api.user.create(email="test@imio.be", username="test")
+        api.user.grant_roles(username="test", roles=["Site Administrator"])
 
 
 COLLECTIVE_PIVOT_FIXTURE = CollectivePivotLayer()
 
 
 COLLECTIVE_PIVOT_INTEGRATION_TESTING = IntegrationTesting(
-    bases=(COLLECTIVE_PIVOT_FIXTURE,),
-    name='CollectivePivotLayer:IntegrationTesting',
+    bases=(COLLECTIVE_PIVOT_FIXTURE,), name="CollectivePivotLayer:IntegrationTesting",
 )
 
 
 COLLECTIVE_PIVOT_FUNCTIONAL_TESTING = FunctionalTesting(
-    bases=(COLLECTIVE_PIVOT_FIXTURE,),
-    name='CollectivePivotLayer:FunctionalTesting',
+    bases=(COLLECTIVE_PIVOT_FIXTURE,), name="CollectivePivotLayer:FunctionalTesting",
 )
 
 
@@ -51,5 +56,5 @@ COLLECTIVE_PIVOT_ACCEPTANCE_TESTING = FunctionalTesting(
         REMOTE_LIBRARY_BUNDLE_FIXTURE,
         z2.ZSERVER_FIXTURE,
     ),
-    name='CollectivePivotLayer:AcceptanceTesting',
+    name="CollectivePivotLayer:AcceptanceTesting",
 )
