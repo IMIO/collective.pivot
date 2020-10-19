@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from collective.pivot.config import getFamilyProperties
 from collective.pivot.utils import _
 from collective.pivot.utils import add_category
 from plone import api
@@ -34,10 +35,28 @@ def uninstall(context):
 
 def add_default_categories(context):
     """Add Pivot categories"""
-    add_category(context, "OTH-A0-003P-2PWS", _("Hosting", context=context))
-    add_category(context, "OTH-A0-003P-2QH4", _("Leisure / discovery", context=context))
     add_category(
-        context, "OTH-A0-003P-2QHT", _("Tourism organizations", context=context)
+        context,
+        getFamilyProperties().get("hosting").get("urn"),
+        _("Hosting", context=context),
     )
-    add_category(context, "OTH-A0-003P-2QHH", _("Terroir", context=context))
-    add_category(context, "OTH-A0-003P-2QL2", _("Events", context=context))
+    add_category(
+        context,
+        getFamilyProperties().get("leisure").get("urn"),
+        _("Leisure / discovery", context=context),
+    )
+    add_category(
+        context,
+        getFamilyProperties().get("tourism_organizations").get("urn"),
+        _("Tourism organizations", context=context),
+    )
+    add_category(
+        context,
+        getFamilyProperties().get("events").get("urn"),
+        _("Events", context=context),
+    )
+    add_category(
+        context,
+        getFamilyProperties().get("terroir").get("urn"),
+        _("Terroir", context=context),
+    )
