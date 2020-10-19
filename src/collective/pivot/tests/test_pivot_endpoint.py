@@ -77,7 +77,12 @@ class TestPivotEndpoint(unittest.TestCase):
         self.assertEqual(endpoint.zip_codes, [u"5000", u"7000"])
 
     def test_treatResult(self):
+        self.maxDiff = None
         endpoint = PivotEndpoint(self.portal, self.request)
         result = endpoint.treatResult(self.json_pivot_family_hosting_raw_mock)
         self.assertDictEqual(result, self.json_pivot_family_hosting_render_mock)
 
+    # def test_render(self):
+    #     with PivotEndpoint(self.pivot_category, self.request) as endpoint:
+    #         service = PivotEndpointGet()
+    #         service.render()
