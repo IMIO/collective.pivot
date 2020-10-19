@@ -11,8 +11,8 @@ class IPivotCategory(model.Schema):
     """ Marker interface for PivotCategory
     """
 
-    category_id = schema.Choice(
-        title=_(u"Category id"),
+    family = schema.Choice(
+        title=_(u"Pivot family"),
         required=True,
         vocabulary="collective.pivot.vocabularies.family_vocabulary",
     )

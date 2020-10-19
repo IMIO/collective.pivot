@@ -18,7 +18,7 @@ class PivotCategoryView(BrowserView):
     def query_url(self):
         cp = "cp:{}".format("|".join(self.zip_codes))
         return "{}query/{};content=1;pretty=true;fmt=json;param={}".format(
-            self.ws_url, self.context.category_id, cp
+            self.ws_url, self.context.family, cp
         )
 
     @property
@@ -28,7 +28,7 @@ class PivotCategoryView(BrowserView):
         """
         cp = "cp:{}".format("|".join(self.zip_codes))
         return "{}thesaurus/family/{};content=1;pretty=true;fmt=json;param={}".format(
-            self.ws_url, self.context.category_id, cp
+            self.ws_url, self.context.family, cp
         )
 
     @property
