@@ -5,6 +5,10 @@ from plone.registry.interfaces import IRegistry
 from Products.Five import BrowserView
 from zope.component import getUtility
 
+import logging
+
+logger = logging.getLogger("Plone")
+
 
 class PivotCategoryView(BrowserView):
     """
@@ -18,11 +22,11 @@ class PivotCategoryView(BrowserView):
     @property
     def query_url(self):
         cp = "cp:{}".format("|".join(self.zip_codes))
-        return "{}query/{};content=1;pretty=true;fmt=json;param={}".format(
-            self.ws_url, self.context.family, cp
         pivot_query = "{}query/{};content=1;pretty=true;fmt=json;param={}".format(
             self.ws_url, getQueryCodeByUrn(self.context.family), cp
         )
+        logger.info("Query Pivot = {}".format(pivot_query))
+        return pivot_query
 
     @property
     def local_query_url(self):
