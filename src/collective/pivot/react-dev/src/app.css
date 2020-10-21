@@ -8,3 +8,18 @@
 	max-height: 800px;
 	overflow-y: scroll;
 }
+
+.offer-card{
+    width: 18rem;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+.embed-responsive-img {
+    object-fit: cover;
+}
+
+.offer-card-img{
+    height: 245px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}

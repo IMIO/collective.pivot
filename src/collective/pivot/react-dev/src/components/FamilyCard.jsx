@@ -1,19 +1,16 @@
-import React, {useState, useEffect} from 'react';
-import { Card, Row, Col} from 'react-bootstrap';
+import React from 'react';
+import { Card, Button} from 'react-bootstrap';
 
 function FamilyCard(props) {
 
-    console.log(props)
     return(
-        <Card className="mb-3">
+        <Card  style={{  }}   className="mb-3 offer-card">
+            <Card.Img className="embed-responsive-img offer-card-img" variant="top" src="https://pivotmedia.tourismewallonie.be/ANX-0T-00W0-0001/ANX-0T-00W0-0001.jpg" />
             <Card.Body className="card-orientation card-horizontal">
                 <Card.Title>{props.item["title"]}</Card.Title>
-                <Card.Text>{"num" && props.item["category"]}</Card.Text>
-                <Card.Text>{props.item["latitude"]}</Card.Text>
-                <Card.Text>{props.item["longitude"]}</Card.Text>
+                <Button href={"num" && props.infoUrl + props.item["offer"]["offerID"]+'&type='+props.item["offer"]["offerTypeId"]}  type="submit" target="_blank" variant="primary">Détails</Button>
             </Card.Body>
         </Card>
     );
 }
-
 export default FamilyCard;
