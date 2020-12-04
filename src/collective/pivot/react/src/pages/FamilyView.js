@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react';
 import FamilyFilter from '../components/FamilyFilter';
 import FamilyList from '../components/FamilyList';
 import FamilyMap from '../components/FamilyMap';
-import { Container, Row, Col} from 'react-bootstrap';
 
 function FamilyView({pivot_url, details_url}) {
   const [categoryList, setCategoryList] = React.useState([]);
@@ -74,22 +73,24 @@ function FamilyView({pivot_url, details_url}) {
       }
 
     return(
-      <Container fluid >
+      <div className="pivot-container">
         {loading ? (
           "Loading..."
         ) : (
           <div>
-          <Row>
-            <FamilyFilter items={items} category={categoryList} value={activeCategory} onChange={handleCategory} />
-          </Row>
-            <p className="h5">Il y a {filterItems && filterItems.length} offres</p>
-          <Row>
-            <Col className="pivot-offer-list col-4"><FamilyList details={details_url} items={filterItems} /></Col>
-            <Col><FamilyMap details={details_url} items={filterItems}/></Col>
-          </Row>
+            <div className="pivot-result">
+              <div className="pivot-offer-list">
+              <div className="pivot-filter">
+              <FamilyFilter items={items} category={categoryList} value={activeCategory} onChange={handleCategory} />
+              <span className="pivot-result-count">Il y a {filterItems && filterItems.length} offres</span>
+            </div>
+                <FamilyList details={details_url} items={filterItems} />
+              </div>
+              <div className="pivot-offer-map"><FamilyMap details={details_url} items={filterItems}/></div>
+            </div>
           </div>
           )}
-      </Container>
+      </div>
     )
 }
 
