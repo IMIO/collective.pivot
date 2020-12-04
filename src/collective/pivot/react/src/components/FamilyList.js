@@ -1,7 +1,5 @@
 import React, {useState, useEffect} from 'react';
 import FamilyCard from './FamilyCard';
-import {ListGroup} from 'react-bootstrap';
-
 
 function FamilyList(props) {
     const [state, setState] = useState([]);
@@ -13,9 +11,9 @@ function FamilyList(props) {
 
      }, [props])
     return(
-        <ListGroup variant="flush">
-           {state && state.map((item, i) => (<ListGroup.Item><FamilyCard key={i} infoUrl={infoUrl}  item={item}/></ListGroup.Item>))}
-        </ListGroup>
+        <ul className="pivot-offer-list-container">
+           {state && state.map((item, i) => (<li className="pivot-item"><FamilyCard key={i} infoUrl={infoUrl}  item={item}/></li>))}
+        </ul>
     );
 }
 
