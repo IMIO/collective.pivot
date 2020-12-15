@@ -1,12 +1,20 @@
 import React, {useState, useEffect} from 'react';
-import { Map, TileLayer, Marker, Popup } from 'react-leaflet'
-
+import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
+import L from 'leaflet';
+import iconSvg from '../assets/pin.svg';
 
 function FamilyMap(props) {
   const [activeItem, setActiveItem] = useState(null);
   const [firstLat, setFirstLat] = useState(50.44569);
   const [firstLong, setFirstLong] = useState(3.95355);
 
+
+
+  var mapIcon = L.icon({
+    iconUrl: iconSvg,
+    iconSize:     [38, 95], // size of the icon
+
+});
 
 
   useEffect(() => {
@@ -26,7 +34,8 @@ function FamilyMap(props) {
           
              { props.items && props.items.map((mark,id) => (
               <Marker 
-                key={id} 
+                key={id}
+                icon={ mapIcon }
                 position={[
                   mark.latitude, 
                   mark.longitude

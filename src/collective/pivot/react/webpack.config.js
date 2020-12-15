@@ -1,7 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const path = require('path');
-
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
 mode: 'development',
 entry: {
@@ -20,7 +19,19 @@ module: {
         },
         {
             test: /.css$/,
-            use: ['style-loader', 'css-loader'],
+            use: [
+                // {
+                //     loader: MiniCssExtractPlugin.loader, 
+                //     options: {
+                //         publicPath: ''
+                //     }
+                // },
+                // {
+                //     loader: "css-loader"
+                // },
+
+                'style-loader', 'css-loader'
+            ],
         },
         {
             test: /\.(png|jpe?g|gif)$/,
@@ -28,14 +39,27 @@ module: {
             options: {
               name: '[name].[ext]',
             },
-          }
+        },
+        {
+            test: /\.svg$/,
+            use: [
+                {
+                loader: 'svg-url-loader',
+                options: {
+                    name: '[name].[ext]',
+                    limit: 10000,
+                },
+                },
+            ],
+        },
     ]
 },
 plugins: [
     new HtmlWebpackPlugin({
         filename: 'index.html',
         template: 'src/index.html'
-        })
+    }),
+    // new MiniCssExtractPlugin()
 ],
 devServer: {
     contentBase: path.resolve(__dirname, '../browser/static/pivot'),

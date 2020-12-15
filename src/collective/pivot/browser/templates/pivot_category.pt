@@ -11,6 +11,8 @@
                                          data-thesaurus-url view/thesaurus_url;
                                         "></div>
           <script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++collective.pivot/pivot/pivot.js"></script>
+          <style type="text/css" tal:attributes="src string:${portal_url}/++resource++collective.pivot/pivot/index.css"></style>
+
         </tal:if>
         <tal:else condition="not:config">
           <p>

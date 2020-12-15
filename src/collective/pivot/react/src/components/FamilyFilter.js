@@ -6,8 +6,8 @@ function FamilyFilter(props) {
 
     }
     return(
-        <form>
-            <div for="exampleForm.SelectCustom">
+        <form className="pivot-select-form">
+            <div className="pivot-select-container" for="exampleForm.SelectCustom">
                 <label>Catégories</label>
                 <select value={props.value} onChange={handleChange} as="select" custom>
                 <option value={"null"}>Toutes les catégories</option>
