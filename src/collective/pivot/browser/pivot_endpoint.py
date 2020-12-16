@@ -46,6 +46,15 @@ class PivotEndpoint(object):
         label = next(gen).get("value")
         return {"offerTypeId": type_offre_id, "offerTypeLabel": label}
 
+    def getLocality(self, offre):
+        gen = (
+            locality
+            for locality in offre.get("adresse1").get("localite")
+            if locality.get("lang") == self.language
+        )
+        locality = next(gen, None)
+        locality = locality.get("value") if locality is not None else locality
+        return locality
     def treatResult(self, results):
         formated_datas = []
         for offre in results.get("offre"):
@@ -57,6 +66,7 @@ class PivotEndpoint(object):
                     u"title": offre.get("nom"),
                     u"latitude": offre.get("adresse1").get("latitude"),
                     u"longitude": offre.get("adresse1").get("longitude"),
+                    u"locality": self.getLocality(offre),
                     u"offer": {
                         u"offerID": offer_id,
                         u"offerTypeId": self.getTypeOffre(offre).get("offerTypeId"),
