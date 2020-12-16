@@ -55,6 +55,14 @@ class PivotEndpoint(object):
         locality = next(gen, None)
         locality = locality.get("value") if locality is not None else locality
         return locality
+
+    def getSpecValueByUrn(self, offre, urn):
+        spec = offre.get("spec")
+        gen = (s for s in spec if s.get("urn") == urn)
+        spec_value = next(gen, None)
+        spec_value = spec_value.get("value") if spec_value is not None else spec_value
+        return spec_value
+
     def treatResult(self, results):
         formated_datas = []
         for offre in results.get("offre"):
@@ -62,6 +70,8 @@ class PivotEndpoint(object):
                 offer_id = None
                 if offre.get("relOffre") is not None:
                     offer_id = offre.get("relOffre")[0].get("offre").get("codeCgt")
+                if offre.get("spec") is not None:
+                    phone1 = self.getSpecValueByUrn(offre, "urn:fld:phone1")
                 sheet = {
                     u"title": offre.get("nom"),
                     u"latitude": offre.get("adresse1").get("latitude"),
@@ -75,6 +85,7 @@ class PivotEndpoint(object):
                             "offerTypeLabel"
                         ),
                     },
+                    u"phone": phone1,
                 }
             except Exception, e:
                 logger.exception(e)
