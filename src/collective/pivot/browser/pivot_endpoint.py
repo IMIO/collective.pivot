@@ -66,6 +66,7 @@ class PivotEndpoint(object):
                     u"title": offre.get("nom"),
                     u"latitude": offre.get("adresse1").get("latitude"),
                     u"longitude": offre.get("adresse1").get("longitude"),
+                    u"cp": offre.get("adresse1").get("cp"),
                     u"locality": self.getLocality(offre),
                     u"offer": {
                         u"offerID": offer_id,
