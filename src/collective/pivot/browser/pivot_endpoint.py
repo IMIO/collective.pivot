@@ -60,7 +60,9 @@ class PivotEndpoint(object):
                     u"offer": {
                         u"offerID": offer_id,
                         u"offerTypeId": self.getTypeOffre(offre).get("offerTypeId"),
-                        u"offerTypeLabel": self.getTypeOffre(offre).get("offerTypeLabel"),
+                        u"offerTypeLabel": self.getTypeOffre(offre).get(
+                            "offerTypeLabel"
+                        ),
                     },
                 }
             except Exception, e:
