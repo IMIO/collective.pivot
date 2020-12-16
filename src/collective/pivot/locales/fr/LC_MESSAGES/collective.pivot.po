@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2020-10-08 13:07+0000\n"
+"POT-Creation-Date: 2020-12-16 09:45+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,15 +26,17 @@ msgstr ""
 msgid "Add new CGT Pivot category folder"
 msgstr "Créer une nouvelle catégorie CGT Pivot"
 
-#: ../content/pivot_category.py:14
-msgid "Category id"
-msgstr "Identifiant de la catégorie"
-
-#: ../browser/templates/pivot_category.pt:25
+#: ../browser/templates/pivot_category.pt:20
 msgid "Click here to complete setup."
 msgstr "Cliquez ici pour finaliser la configuration."
 
-#: ../setuphandlers.py:39
+#: ../setuphandlers.py:56
+#: ../vocabularies.py:17
+msgid "Events"
+msgstr ""
+
+#: ../setuphandlers.py:41
+#: ../vocabularies.py:11
 msgid "Hosting"
 msgstr "Hébergement"
 
@@ -42,11 +44,12 @@ msgstr "Hébergement"
 msgid "Installs the collective.pivot add-on."
 msgstr ""
 
-#: ../content/pivot_category.py:17
+#: ../content/pivot_category.py:21
 msgid "Leave empty if you want to get zip codes from global settings."
 msgstr "Ne rien mettre si vous désirez utiliser les codes postaux par défaut du site."
 
-#: ../setuphandlers.py:40
+#: ../setuphandlers.py:46
+#: ../vocabularies.py:12
 msgid "Leisure / discovery"
 msgstr "Loisirs / Découvertes"
 
@@ -58,11 +61,17 @@ msgstr "Paramètres de Pivot"
 msgid "Pivot category"
 msgstr "Catégorie Pivot"
 
-#: ../setuphandlers.py:42
+#: ../content/pivot_category.py:15
+msgid "Pivot family"
+msgstr ""
+
+#: ../setuphandlers.py:61
+#: ../vocabularies.py:18
 msgid "Terroir"
 msgstr "Terroir"
 
-#: ../setuphandlers.py:41
+#: ../setuphandlers.py:51
+#: ../vocabularies.py:15
 msgid "Tourism organizations"
 msgstr "Organismes touristiques"
 
@@ -78,17 +87,17 @@ msgstr "Clé d'authentification Pivot (http header)"
 msgid "Webservice url"
 msgstr "Url du webservice Pivot"
 
-#: ../browser/templates/pivot_category.pt:24
+#: ../browser/templates/pivot_category.pt:19
 msgid "Your configuration is not complete."
 msgstr "Votre configuration est incomplète."
 
 #: ../browser/controlpanel.py:21
-#: ../content/pivot_category.py:18
+#: ../content/pivot_category.py:24
 msgid "Zip code"
 msgstr "Code postal"
 
 #: ../browser/controlpanel.py:20
-#: ../content/pivot_category.py:16
+#: ../content/pivot_category.py:20
 msgid "Zip codes"
 msgstr "Codes postaux"
 
