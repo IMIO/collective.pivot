@@ -67,11 +67,12 @@ class PivotEndpoint(object):
         formated_datas = []
         for offre in results.get("offre"):
             try:
-                offer_id = None
+                offer_id = phone1 = email1 = None
                 if offre.get("relOffre") is not None:
                     offer_id = offre.get("relOffre")[0].get("offre").get("codeCgt")
                 if offre.get("spec") is not None:
                     phone1 = self.getSpecValueByUrn(offre, "urn:fld:phone1")
+                    email1 = self.getSpecValueByUrn(offre, "urn:fld:mail1")
                 sheet = {
                     u"title": offre.get("nom"),
                     u"latitude": offre.get("adresse1").get("latitude"),
@@ -86,6 +87,7 @@ class PivotEndpoint(object):
                         ),
                     },
                     u"phone": phone1,
+                    u"email": email1,
                 }
             except Exception, e:
                 logger.exception(e)
