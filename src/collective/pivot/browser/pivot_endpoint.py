@@ -91,7 +91,7 @@ class PivotEndpoint(object):
     @property
     def query_url(self):
         cp = "cp:{}".format("|".join(self.zip_codes))
-        return "{}query/{};content=1;pretty=true;fmt=json;param={}".format(
+        return "{}query/{};content=4;pretty=true;fmt=json;param={}".format(
             self.ws_url, getQueryCodeByUrn(self.context.family), cp
         )
 
