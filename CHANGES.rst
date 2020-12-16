@@ -5,7 +5,10 @@ Changelog
 1.0a2 (unreleased)
 ------------------
 
-- Split to diffetent files js and css on react project
+- [WEB-3482] Get new attributes from Pivot (CP, Locality, phone1)
+  [boulch]
+
+- [WEB-3482] Split to diffetent files js and css on react project
   [thomlamb]
 
 
