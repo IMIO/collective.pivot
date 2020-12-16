@@ -5,6 +5,9 @@ Changelog
 1.0a2 (unreleased)
 ------------------
 
+- [WEB-3482] Get new attributes from Pivot : email
+  [boulch]
+
 - [WEB-3482] Get new attributes from Pivot (CP, Locality, phone1)
   [boulch]
 
