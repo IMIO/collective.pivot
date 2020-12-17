@@ -79,11 +79,13 @@ function FamilyView({pivot_url, details_url}) {
         ) : (
           <div>
             <div className="pivot-filter">
-                <FamilyFilter items={items} category={categoryList} value={activeCategory} onChange={handleCategory} />
-                <span className="pivot-result-count">Il y a {filterItems && filterItems.length} offre(s)</span>
+                <div className="pivot-filter-container">
+                  <FamilyFilter items={items} category={categoryList} value={activeCategory} onChange={handleCategory} />
+                </div>
             </div>
             <div className="pivot-result">
               <div className="pivot-offer-list">
+                <span className="pivot-result-count">Nous avons trouvé {filterItems && filterItems.length} offre(s)</span>
                 <FamilyList details={details_url} items={filterItems} />
               </div>
               <div className="pivot-offer-map"><FamilyMap details={details_url} items={filterItems}/></div>

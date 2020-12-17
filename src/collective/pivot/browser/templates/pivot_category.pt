@@ -7,11 +7,11 @@
                          portal_url context/@@plone_portal_state/portal_url">
         <tal:if condition="config">
           <div id="root" tal:attributes="data-pivot-view-url view/local_query_url;
-                                         data-pivot-details-url string:https://www.bwcb.be/details/;
+                                         data-pivot-details-url string:https://organismes.tourismewallonie.be/details/;
                                          data-thesaurus-url view/thesaurus_url;
                                         "></div>
           <script type="text/javascript" tal:attributes="src string:${portal_url}/++resource++collective.pivot/pivot/pivot.js"></script>
-          <style type="text/css" tal:attributes="src string:${portal_url}/++resource++collective.pivot/pivot/index.css"></style>
+          <!-- <style type="text/css" tal:attributes="src string:${portal_url}/++resource++collective.pivot/pivot/index.css"></style> -->
 
         </tal:if>
         <tal:else condition="not:config">

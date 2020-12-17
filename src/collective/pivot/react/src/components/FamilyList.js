@@ -10,9 +10,14 @@ function FamilyList(props) {
         setInfoUrl(props.details)
 
      }, [props])
+
+     function changeBackground(e) {
+        //  console.log(e["offer"]["offerID"])
+        console.log("geelo")
+       }
     return(
         <ul className="pivot-offer-list-container">
-           {state && state.map((item, i) => (<li className="pivot-item"><FamilyCard key={i} infoUrl={infoUrl}  item={item}/></li>))}
+           {state && state.map((item, i) => (<li onMouseOver={() => console.log(item["offer"]["offerID"])} className="pivot-item"><FamilyCard key={i} infoUrl={infoUrl}  item={item}/></li>))}
         </ul>
     );
 }
