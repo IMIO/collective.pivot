@@ -5,7 +5,14 @@ Changelog
 1.0a3 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- [WEB-3482] Add toggle map button
+  [thomlamb]
+
+- [WEB-3482] Adding styles for pivot view
+  [thomlamb]
+
+- [WEB-3482] Add less package for react and webpack
+  [thomlamb]
 
 
 1.0a2 (2020-12-17)
