@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.0a3 (unreleased)
+1.0a3 (2020-12-17)
 ------------------
 
 - [WEB-3482] Add toggle map button
