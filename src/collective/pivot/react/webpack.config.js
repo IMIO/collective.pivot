@@ -13,7 +13,7 @@ output: {
 module: {
     rules: [
         {
-            test: /.(js|jsx)$/,
+            test: /.(js|jsx|less)$/,
             exclude: /node_modules/,
             use: ['babel-loader']
         },
@@ -52,6 +52,25 @@ module: {
                 },
             ],
         },
+        {
+            test: /\.less$/,
+            use: [
+              {
+                loader: "style-loader",
+              },
+              {
+                loader: "css-loader",
+              },
+              {
+                loader: "less-loader",
+                options: {
+                  lessOptions: {
+                    strictMath: true,
+                  },
+                },
+              },
+            ],
+          },
     ]
 },
 plugins: [

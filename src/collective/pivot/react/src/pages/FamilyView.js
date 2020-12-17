@@ -2,6 +2,8 @@ import React, {useState, useEffect} from 'react';
 import FamilyFilter from '../components/FamilyFilter';
 import FamilyList from '../components/FamilyList';
 import FamilyMap from '../components/FamilyMap';
+import Pin from '../assets/caption-pin.svg';
+
 
 function FamilyView({pivot_url, details_url}) {
   const [categoryList, setCategoryList] = React.useState([]);
@@ -9,6 +11,8 @@ function FamilyView({pivot_url, details_url}) {
   const [activeCategory, setActiveCategory] = React.useState("null");
   const [filterItems, setFilterItems] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [hiddenMap, setHiddenMap] = useState(false);
+
   const [error, setError] = React.useState(null);
   
   const myHeaders = new Headers();
@@ -71,6 +75,10 @@ function FamilyView({pivot_url, details_url}) {
     function handleCategory(newCategory) {
         setActiveCategory(newCategory);
       }
+    function toggleClass() {
+      console.log("heelo")
+      setHiddenMap(!hiddenMap);
+    }
 
     return(
       <div className="pivot-container">
@@ -81,9 +89,12 @@ function FamilyView({pivot_url, details_url}) {
             <div className="pivot-filter">
                 <div className="pivot-filter-container">
                   <FamilyFilter items={items} category={categoryList} value={activeCategory} onChange={handleCategory} />
+                  <div className="pivot-display-map">
+                    <img onClick={toggleClass} className='display-map-icon' src={Pin} alt="Logo pin" />
+                  </div>
                 </div>
             </div>
-            <div className="pivot-result">
+            <div className={hiddenMap ? 'pivot-result hidden-map':'pivot-result open-map'}>
               <div className="pivot-offer-list">
                 <span className="pivot-result-count">Nous avons trouvé {filterItems && filterItems.length} offre(s)</span>
                 <FamilyList details={details_url} items={filterItems} />

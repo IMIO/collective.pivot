@@ -4,6 +4,14 @@ Changelog
 
 1.0a2 (unreleased)
 ------------------
+- [WEB-3482] Add toggle map button
+  [thomlamb]
+
+- [WEB-3482] Adding styles for pivot view
+  [thomlamb]
+
+- [WEB-3482] Add less package for react and webpack
+  [thomlamb]
 
 - [WEB-3482] Get new attributes from Pivot : email
   [boulch]

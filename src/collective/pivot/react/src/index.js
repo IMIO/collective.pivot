@@ -5,7 +5,8 @@ import "regenerator-runtime/runtime"; // TODO delete. https://stackoverflow.com/
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import 'leaflet/dist/leaflet.css';
 import 'leaflet/dist/images/marker-icon.png';
-import './index.css';
+// import './index.css';
+import './index.less';
 
 
 import App from './App';
