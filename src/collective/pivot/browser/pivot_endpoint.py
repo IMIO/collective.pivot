@@ -67,9 +67,6 @@ class PivotEndpoint(object):
         formated_datas = []
         for offre in results.get("offre"):
             try:
-                offer_id = phone1 = email1 = None
-                if offre.get("relOffre") is not None:
-                    offer_id = offre.get("relOffre")[0].get("offre").get("codeCgt")
                 if offre.get("spec") is not None:
                     phone1 = self.getSpecValueByUrn(offre, "urn:fld:phone1")
                     email1 = self.getSpecValueByUrn(offre, "urn:fld:mail1")
@@ -80,7 +77,7 @@ class PivotEndpoint(object):
                     u"cp": offre.get("adresse1").get("cp"),
                     u"locality": self.getLocality(offre),
                     u"offer": {
-                        u"offerID": offer_id,
+                        u"offerID": offre.get("codeCgt"),
                         u"offerTypeId": self.getTypeOffre(offre).get("offerTypeId"),
                         u"offerTypeLabel": self.getTypeOffre(offre).get(
                             "offerTypeLabel"

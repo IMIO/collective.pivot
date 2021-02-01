@@ -5,7 +5,8 @@ Changelog
 1.0a4 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Fix offer codeCgt
+  [boulch]
 
 
 1.0a3 (2020-12-17)
