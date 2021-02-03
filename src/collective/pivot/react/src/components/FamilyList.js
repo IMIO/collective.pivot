@@ -11,13 +11,13 @@ function FamilyList(props) {
 
      }, [props])
 
-     function changeBackground(e) {
-        //  console.log(e["offer"]["offerID"])
-        console.log("geelo")
-       }
+     function handleChange(event) {
+        props.onChange(event);
+    }
     return(
         <ul className="pivot-offer-list-container">
-           {state && state.map((item, i) => (<li onMouseOver={() => console.log(item["offer"]["offerID"])} className="pivot-item"><FamilyCard key={i} infoUrl={infoUrl}  item={item}/></li>))}
+           {state && state.map((item, i) => (<li onMouseEnter={() => handleChange(i)} onMouseLeave={() => handleChange(null)} className="pivot-item">
+               <FamilyCard key={i} infoUrl={infoUrl}  item={item}/></li>))}
         </ul>
     );
 }

@@ -4,8 +4,14 @@ Changelog
 
 1.0a5 (unreleased)
 ------------------
+- Improved UI
+  [thomlamb]
 
-- Nothing changed yet.
+- Modification react to display the popup from the map to the hover items.
+  [thomlamb]
+
+- Improved accessibility.
+  [thomlamb]
 
 
 1.0a4 (2021-02-01)

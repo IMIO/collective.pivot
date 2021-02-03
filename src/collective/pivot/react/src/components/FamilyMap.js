@@ -7,31 +7,35 @@ function FamilyMap(props) {
   const [activeItem, setActiveItem] = useState(null);
   const [firstLat, setFirstLat] = useState(50.44569);
   const [firstLong, setFirstLong] = useState(3.95355);
+  const [id, setId] = useState(3.95355);
 
-
-
+  let popid = 99
   var mapIcon = L.icon({
     iconUrl: iconSvg,
     iconSize:     [38, 95], // size of the icon
 
 });
+useEffect(() => {
+  if(popid !== null){
+    setActiveItem(props.items && props.items[props.hoverId])
+  }else(
+    setActiveItem(null)
+  )
+}, [props.hoverId]);
 
-
-  useEffect(() => {
-    if(props.items !== null){
-      setFirstLat(props.items[0].latitude)
-      setFirstLong(props.items[0].longitude)
-    }
-  }, [props]);
-
+useEffect(() => {
+  if(props.items !== null){
+    setFirstLat(props.items[0].latitude)
+    setFirstLong(props.items[0].longitude)
+  }
+}, [props]);
     return (
       <div>
-        <Map center={[firstLat, firstLong]} zoom={11}>
+        <Map center={[firstLat, firstLong]} zoom={13}>
           <TileLayer
             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
-          
              { props.items && props.items.map((mark,id) => (
               <Marker 
                 key={id}
@@ -41,11 +45,19 @@ function FamilyMap(props) {
                   mark.longitude
                 ]}
                 onClick= {() =>{
-                  setActiveItem(mark)
+                   setActiveItem(mark)
                 }}
+
+                // onMouseOver={(e) => {
+                //   setActiveItem(mark)
+                // }}
+                // onMouseOut={(e) => {
+                //   setActiveItem(null);
+                // }}
+
               />
             ))};
-
+            
             {activeItem && (
               <Popup 
                 position={[

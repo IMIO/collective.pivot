@@ -45,8 +45,8 @@ msgid "Installs the collective.pivot add-on."
 msgstr ""
 
 #: ../content/pivot_category.py:21
-msgid "Leave empty if you want to get zip codes from global settings."
-msgstr "Ne rien mettre si vous désirez utiliser les codes postaux par défaut du site."
+msgid "Leave empty if you want to get zip codes from global settings. Separate postal codes with a |"
+msgstr "Ne rien mettre si vous désirez utiliser les codes postaux par défaut du site. Séparez les codes postaux par un |"
 
 #: ../setuphandlers.py:46
 #: ../vocabularies.py:12
