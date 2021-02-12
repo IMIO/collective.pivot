@@ -50,8 +50,8 @@
       />
 
   <utility
-      component=".vocabularies.familyvocabulary"
-      name="collective.pivot.vocabularies.family_vocabulary"
+      name="collective.pivot.vocabularies.Families"
+      component=".vocabularies.family_vocabulary_factory"
       provides="zope.schema.interfaces.IVocabularyFactory"
   />
 

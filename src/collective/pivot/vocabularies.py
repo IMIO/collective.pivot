@@ -23,4 +23,4 @@ class FamilyVocabularyFactory:
         return SimpleVocabulary(terms)
 
 
-familyvocabulary = FamilyVocabularyFactory()
+family_vocabulary_factory = FamilyVocabularyFactory()
