@@ -7,14 +7,14 @@ from zope.interface import implementer
 from collective.pivot import _
 
 
-class IPivotCategory(model.Schema):
-    """ Marker interface for PivotCategory
+class IFamily(model.Schema):
+    """ Marker interface for Family
     """
 
     family = schema.Choice(
         title=_(u"Pivot family"),
         required=True,
-        vocabulary="collective.pivot.vocabularies.family_vocabulary",
+        vocabulary="collective.pivot.vocabularies.Families",
     )
     zip_codes = schema.List(
         title=_(u"Zip codes"),
@@ -26,7 +26,7 @@ class IPivotCategory(model.Schema):
     )
 
 
-@implementer(IPivotCategory)
-class PivotCategory(Container):
-    """ Pivot Category container class
+@implementer(IFamily)
+class Family(Container):
+    """ Pivot Family container class
     """
