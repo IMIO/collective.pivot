@@ -3,7 +3,7 @@
 
 def getFamilyProperties():
     """
-    Don't store query identifier (OTH-xxx) in pivot_category.family field
+    Don't store query identifier (OTH-xxx) in Family.family field
     """
     return {
         "hosting": {"urn": "urn:fam:1", "query": "OTH-A0-003P-2PWS"},
