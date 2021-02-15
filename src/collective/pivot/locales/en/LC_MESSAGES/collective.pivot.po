@@ -22,11 +22,11 @@ msgstr ""
 msgid "Add default categories for collective.pivot"
 msgstr ""
 
-#: ../profiles/default/types/pivot_category.xml
-msgid "Add new CGT Pivot category folder"
+#: ../profiles/default/types/Family.xml
+msgid "Add new CGT Pivot family folder"
 msgstr ""
 
-#: ../browser/templates/pivot_category.pt:20
+#: ../contents/family/view.pt:20
 msgid "Click here to complete setup."
 msgstr ""
 
@@ -44,7 +44,7 @@ msgstr ""
 msgid "Installs the collective.pivot add-on."
 msgstr ""
 
-#: ../content/pivot_category.py:21
+#: ../contents/family/content.pt:21
 msgid "Leave empty if you want to get zip codes from global settings."
 msgstr ""
 
@@ -57,11 +57,11 @@ msgstr ""
 msgid "Pivot Settings"
 msgstr ""
 
-#: ../profiles/default/types/pivot_category.xml
-msgid "Pivot category"
+#: ../profiles/default/types/Family.xml
+msgid "Pivot family"
 msgstr ""
 
-#: ../content/pivot_category.py:15
+#: ../contents/family/content.pt:15
 msgid "Pivot family"
 msgstr ""
 
@@ -87,17 +87,17 @@ msgstr ""
 msgid "Webservice url"
 msgstr ""
 
-#: ../browser/templates/pivot_category.pt:19
+#: ../contents/family/view.pt:19
 msgid "Your configuration is not complete."
 msgstr ""
 
 #: ../browser/controlpanel.py:21
-#: ../content/pivot_category.py:24
+#: ../contents/family/content.pt:24
 msgid "Zip code"
 msgstr ""
 
 #: ../browser/controlpanel.py:20
-#: ../content/pivot_category.py:20
+#: ../contents/family/content.pt:20
 msgid "Zip codes"
 msgstr ""
 

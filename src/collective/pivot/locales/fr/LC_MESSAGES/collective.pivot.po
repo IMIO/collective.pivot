@@ -22,11 +22,11 @@ msgstr "Crée le contenu de collective.pivot"
 msgid "Add default categories for collective.pivot"
 msgstr ""
 
-#: ../profiles/default/types/pivot_category.xml
+#: ../profiles/default/types/Family.xml
 msgid "Add new CGT Pivot category folder"
 msgstr "Créer une nouvelle catégorie CGT Pivot"
 
-#: ../browser/templates/pivot_category.pt:20
+#: ../browser/templates/Family.pt:20
 msgid "Click here to complete setup."
 msgstr "Cliquez ici pour finaliser la configuration."
 
@@ -44,7 +44,7 @@ msgstr "Hébergement"
 msgid "Installs the collective.pivot add-on."
 msgstr ""
 
-#: ../content/pivot_category.py:21
+#: ../content/Family.py:21
 msgid "Leave empty if you want to get zip codes from global settings. Separate postal codes with a |"
 msgstr "Ne rien mettre si vous désirez utiliser les codes postaux par défaut du site. Séparez les codes postaux par un |"
 
@@ -57,11 +57,11 @@ msgstr "Loisirs / Découvertes"
 msgid "Pivot Settings"
 msgstr "Paramètres de Pivot"
 
-#: ../profiles/default/types/pivot_category.xml
-msgid "Pivot category"
-msgstr "Catégorie Pivot"
+#: ../profiles/default/types/Family.xml
+msgid "Pivot family"
+msgstr "Famille Pivot"
 
-#: ../content/pivot_category.py:15
+#: ../content/Family.py:15
 msgid "Pivot family"
 msgstr ""
 
@@ -87,17 +87,17 @@ msgstr "Clé d'authentification Pivot (http header)"
 msgid "Webservice url"
 msgstr "Url du webservice Pivot"
 
-#: ../browser/templates/pivot_category.pt:19
+#: ../browser/templates/Family.pt:19
 msgid "Your configuration is not complete."
 msgstr "Votre configuration est incomplète."
 
 #: ../browser/controlpanel.py:21
-#: ../content/pivot_category.py:24
+#: ../content/Family.py:24
 msgid "Zip code"
 msgstr "Code postal"
 
 #: ../browser/controlpanel.py:20
-#: ../content/pivot_category.py:20
+#: ../content/Family.py:20
 msgid "Zip codes"
 msgstr "Codes postaux"
 
