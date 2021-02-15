@@ -16,7 +16,7 @@ class TestVocabularies(unittest.TestCase):
         self.portal = self.layer['portal']
 
     def test_vocabulary_keys(self):
-        name = 'collective.pivot.vocabularies.family_vocabulary'
+        name = 'collective.pivot.vocabularies.Families'
         factory = getUtility(IVocabularyFactory, name)
         vocabulary = factory(self.portal)
         keys = vocabulary.by_value.keys()

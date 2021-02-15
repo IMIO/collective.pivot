@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 """Setup tests for this package."""
-from collective.pivot.browser.pivot_endpoint import PivotEndpoint
-from collective.pivot.browser.pivot_endpoint import PivotEndpointGet
+from collective.pivot.contents.family.endpoint import PivotEndpoint
+from collective.pivot.contents.family.endpoint import PivotEndpointGet
 from collective.pivot.testing import COLLECTIVE_PIVOT_INTEGRATION_TESTING  # noqa: E501
-from collective.pivot.utils import add_category
+from collective.pivot.utils import add_family
 from plone.app.testing import login
 from zope.schema.interfaces import IVocabularyFactory
 from zope.component import getUtility
@@ -37,10 +37,10 @@ class TestPivotEndpoint(unittest.TestCase):
         ) as json_file:
             self.json_pivot_family_hosting_render_mock = json.load(json_file)
 
-        self.pivot_category = add_category(self.portal, u"urn:fam:1", u"Hosting")
+        self.Family = add_family(self.portal, u"urn:fam:1", u"Hosting")
 
     def test_vocabulary_keys(self):
-        name = "collective.pivot.vocabularies.family_vocabulary"
+        name = "collective.pivot.vocabularies.Families"
         factory = getUtility(IVocabularyFactory, name)
         vocabulary = factory(self.portal)
         keys = vocabulary.by_value.keys()
@@ -56,7 +56,7 @@ class TestPivotEndpoint(unittest.TestCase):
                 "https://pivotweb.tourismewallonie.be/PivotWeb-3.1/query/OTH-A0-003P-2PWS;content=1;pretty=true;fmt=json;param=cp:5530",
                 text=json.dumps(self.json_pivot_family_hosting_raw_mock),
             )
-            endpoint = PivotEndpoint(self.pivot_category, self.request)
+            endpoint = PivotEndpoint(self.Family, self.request)
             endpoint()
 
     def test_getResult(self):
@@ -65,15 +65,15 @@ class TestPivotEndpoint(unittest.TestCase):
                 "https://pivotweb.tourismewallonie.be/PivotWeb-3.1/query/OTH-A0-003P-2PWS;content=1;pretty=true;fmt=json;param=cp:5530",
                 text=json.dumps(self.json_pivot_family_hosting_raw_mock),
             )
-            endpoint = PivotEndpoint(self.pivot_category, self.request)
+            endpoint = PivotEndpoint(self.Family, self.request)
             result = endpoint.getResult()
             self.assertDictEqual(result, self.json_pivot_family_hosting_raw_mock)
 
     def test_zip_codes(self):
         login(self.portal, "test")
-        endpoint = PivotEndpoint(self.pivot_category, self.request)
+        endpoint = PivotEndpoint(self.Family, self.request)
         self.assertEqual(endpoint.zip_codes, [u"5530"])
-        self.pivot_category.zip_codes = [u"5000", u"7000"]
+        self.Family.zip_codes = [u"5000", u"7000"]
         self.assertEqual(endpoint.zip_codes, [u"5000", u"7000"])
 
     def test_treatResult(self):
@@ -83,6 +83,6 @@ class TestPivotEndpoint(unittest.TestCase):
         self.assertDictEqual(result, self.json_pivot_family_hosting_render_mock)
 
     # def test_render(self):
-    #     with PivotEndpoint(self.pivot_category, self.request) as endpoint:
+    #     with PivotEndpoint(self.Family, self.request) as endpoint:
     #         service = PivotEndpointGet()
     #         service.render()

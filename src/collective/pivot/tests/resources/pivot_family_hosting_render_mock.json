@@ -5,7 +5,7 @@
         "offer": {
             "offerTypeId": 3,
             "offerTypeLabel": "Chambre d\u2019h\u00f4tes",
-            "offerID": "ANX-01-08Y8-00VI"
+            "offerID": "CHB-01-02YR-0060"
         },
         "locality": "Durnal",
         "title": "Le Bordon",
@@ -18,7 +18,7 @@
         "offer": {
             "offerTypeId": 5,
             "offerTypeLabel": "Camping",
-            "offerID": "ANX-01-000H4D"
+            "offerID": "CGT_0005_00000175"
         },
         "locality": "Durnal",
         "title": "Camping: Le Pommier Rustique",
@@ -31,7 +31,7 @@
         "offer": {
             "offerTypeId": 3,
             "offerTypeLabel": "Chambre d\u2019h\u00f4tes",
-            "offerID": "ANX-0B-00P6-00K1"
+            "offerID": "CGT_0003_00000255"
         },
         "locality": "Dorinne",
         "title": "LE MARRONNIER : CHAMBRE JAUNE",
@@ -44,7 +44,7 @@
         "offer": {
             "offerTypeId": 4,
             "offerTypeLabel": "Meubl\u00e9",
-            "offerID": "ANX-01-09VV-013C"
+            "offerID": "MBL-01-09VV-012B"
         },
         "locality": "Godinne",
         "title": "Endigo",
@@ -57,7 +57,7 @@
         "offer": {
             "offerTypeId": 3,
             "offerTypeLabel": "Chambre d\u2019h\u00f4tes",
-            "offerID": "ANX-0B-00QB-0001"
+            "offerID": "CGT_0003_00000ABB"
         },
         "locality": "Yvoir",
         "title": "LA FERME DE L'AIRBOIS",
@@ -70,7 +70,7 @@
         "offer": {
             "offerTypeId": 2,
             "offerTypeLabel": "G\u00eete",
-            "offerID": "ANX-0B-00Q9-006N"
+            "offerID": "GIT-01-0008P8"
         },
         "locality": "Yvoir",
         "title": "FERME DE L'AIRBOIS: GITE DU LOGIS",
@@ -83,7 +83,7 @@
         "offer": {
             "offerTypeId": 3,
             "offerTypeLabel": "Chambre d\u2019h\u00f4tes",
-            "offerID": "ANX-0B-01LK-00J3"
+            "offerID": "CHB-01-0A8I-01QW"
         },
         "locality": "Mont",
         "title": "Au Mas de Mont 1",
@@ -96,7 +96,7 @@
         "offer": {
             "offerTypeId": 3,
             "offerTypeLabel": "Chambre d\u2019h\u00f4tes",
-            "offerID": "ANX-0B-00P6-00JE"
+            "offerID": "CGT_0003_00000AE8"
         },
         "locality": "Dorinne",
         "title": "LE MARRONNIER : CHAMBRE BLEUE",
@@ -109,7 +109,7 @@
         "offer": {
             "offerTypeId": 2,
             "offerTypeLabel": "G\u00eete",
-            "offerID": "ANX-0B-00Q9-009U"
+            "offerID": "GIT-01-0008P9"
         },
         "locality": "Yvoir",
         "title": "FERME DE L'AIRBOIS: GITE LES ECURIES",
@@ -122,7 +122,7 @@
         "offer": {
             "offerTypeId": 3,
             "offerTypeLabel": "Chambre d\u2019h\u00f4tes",
-            "offerID": "ANX-0B-01LK-00LS"
+            "offerID": "CHB-01-0A8I-01ZV"
         },
         "locality": "Mont",
         "title": "Au Mas de Mont 2",
@@ -135,7 +135,7 @@
         "offer": {
             "offerTypeId": 2,
             "offerTypeLabel": "G\u00eete",
-            "offerID": "ANX-0B-00Q8-002J"
+            "offerID": "CGT_0002_00000C26"
         },
         "locality": "Durnal",
         "title": "LA TURBINE",
@@ -148,7 +148,7 @@
         "offer": {
             "offerTypeId": 3,
             "offerTypeLabel": "Chambre d\u2019h\u00f4tes",
-            "offerID": "ANX-1E-0264-0052"
+            "offerID": "CHB-01-000BBK"
         },
         "locality": "Yvoir",
         "title": "LE BOUCHAT OREILLE - BAMBOU",
@@ -161,7 +161,7 @@
         "offer": {
             "offerTypeId": 3,
             "offerTypeLabel": "Chambre d\u2019h\u00f4tes",
-            "offerID": "ANX-0B-01LK-00P8"
+            "offerID": "CHB-01-0A8I-0277"
         },
         "locality": "Mont",
         "title": "Au Mas de Mont 3",
@@ -174,7 +174,7 @@
         "offer": {
             "offerTypeId": 2,
             "offerTypeLabel": "G\u00eete",
-            "offerID": "ANX-1E-069K-004X"
+            "offerID": "CGT_0002_00000D8E"
         },
         "locality": "Evrehailles",
         "title": "LA FERME CROQUETTE - ANCIENNE ECOLE",
@@ -187,7 +187,7 @@
         "offer": {
             "offerTypeId": 3,
             "offerTypeLabel": "Chambre d\u2019h\u00f4tes",
-            "offerID": "ANX-0B-00P6-00I4"
+            "offerID": "CHB-01-000BBL"
         },
         "locality": "Yvoir",
         "title": "LE BOUCHAT OREILLE - PROMENADE DE ST-CLOUD",
@@ -200,7 +200,7 @@
         "offer": {
             "offerTypeId": 2,
             "offerTypeLabel": "G\u00eete",
-            "offerID": "ANX-0B-00QA-00MW"
+            "offerID": "CGT_0002_00000116"
         },
         "locality": "Purnode",
         "title": "CHANTEGRILLET",
@@ -213,7 +213,7 @@
         "offer": {
             "offerTypeId": 3,
             "offerTypeLabel": "Chambre d\u2019h\u00f4tes",
-            "offerID": "ANX-0B-00P6-00HH"
+            "offerID": "CHB-01-000BBM"
         },
         "locality": "Yvoir",
         "title": "LE BOUCHAT OREILLE - L'OLIVERAIE",
@@ -226,7 +226,7 @@
         "offer": {
             "offerTypeId": 5,
             "offerTypeLabel": "Camping",
-            "offerID": "ANX-0B-01MK-001K"
+            "offerID": "CGT_0005_00000174"
         },
         "locality": "Purnode",
         "title": "Camping du Bocq",
@@ -239,7 +239,7 @@
         "offer": {
             "offerTypeId": 3,
             "offerTypeLabel": "Chambre d\u2019h\u00f4tes",
-            "offerID": "ANX-1E-0264-001V"
+            "offerID": "CHB-01-000OMF"
         },
         "locality": "Yvoir",
         "title": "LE BOUCHAT OREILLE - LE 4",
@@ -252,7 +252,7 @@
         "offer": {
             "offerTypeId": 2,
             "offerTypeLabel": "G\u00eete",
-            "offerID": "ANX-1E-02LB-005T"
+            "offerID": "GIT-01-000OOG"
         },
         "locality": "Evrehailles",
         "title": "LA FERME CROQUETTE : LE CORPS DE LOGIS",
