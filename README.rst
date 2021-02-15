@@ -1,3 +1,30 @@
+.. This README is meant for consumption by humans and pypi. Pypi can render rst files so please do not use Sphinx features.
+   If you want to learn more about writing documentation, please check out: http://docs.plone.org/about/documentation_styleguide.html
+   This text does not appear on pypi or github. It is a comment.
+
+.. image:: https://github.com/IMIO/collective.pivot/workflows/Tests/badge.svg
+    :target: https://github.com/IMIO/collective.pivot/actions?query=workflow%3ATests
+    :alt: CI Status
+
+.. image:: https://coveralls.io/repos/github/IMIO/collective.pivot/badge.svg?branch=main
+    :target: https://coveralls.io/github/IMIO/collective.pivot?branch=main
+    :alt: Coveralls
+
+.. image:: https://img.shields.io/pypi/v/collective.pivot.svg
+    :target: https://pypi.python.org/pypi/collective.pivot/
+    :alt: Latest Version
+
+.. image:: https://img.shields.io/pypi/status/collective.pivot.svg
+    :target: https://pypi.python.org/pypi/collective.pivot
+    :alt: Egg Status
+
+.. image:: https://img.shields.io/pypi/pyversions/collective.pivot.svg?style=plastic   :alt: Supported - Python Versions
+
+.. image:: https://img.shields.io/pypi/l/collective.pivot.svg
+    :target: https://pypi.python.org/pypi/collective.pivot/
+    :alt: License
+
+
 ================
 collective.pivot
 ================
