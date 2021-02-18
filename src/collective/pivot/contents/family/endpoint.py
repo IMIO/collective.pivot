@@ -86,7 +86,7 @@ class PivotEndpoint(object):
                     u"phone": phone1,
                     u"email": email1,
                 }
-            except Exception, e:
+            except Exception as e:
                 logger.exception(e)
             formated_datas.append(sheet)
         total_datas = len(formated_datas)
