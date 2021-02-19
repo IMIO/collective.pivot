@@ -29,7 +29,7 @@ before_install:
   - git config --global user.name "Travis CI"
   - sudo apt-get install -y firefox-geckodriver
   - virtualenv -p `which python` .
-  - bin/pip install -r requirements$PLONE_VERSION.txt -c constraints_plone$PLONE_VERSION.txt
+  - bin/pip install -r requirements.txt -c constraints_plone$PLONE_VERSION.txt
   - cp test_plone$PLONE_VERSION.cfg buildout.cfg
 
 install:
