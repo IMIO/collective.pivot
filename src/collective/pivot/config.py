@@ -16,7 +16,5 @@ def getFamilyProperties():
 
 def getQueryCodeByUrn(urn):
     dic = getFamilyProperties()
-    result = [
-        props["query"] for name, props in dic.items() if props["urn"] == urn
-    ]
+    result = [props["query"] for name, props in dic.items() if props["urn"] == urn]
     return result[0]

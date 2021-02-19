@@ -8,8 +8,7 @@ from collective.pivot import _
 
 
 class IFamily(model.Schema):
-    """ Marker interface for Family
-    """
+    """Marker interface for Family"""
 
     family = schema.Choice(
         title=_(u"Pivot family"),
@@ -28,5 +27,4 @@ class IFamily(model.Schema):
 
 @implementer(IFamily)
 class Family(Container):
-    """ Pivot Family container class
-    """
+    """Pivot Family container class"""

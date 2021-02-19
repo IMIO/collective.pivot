@@ -41,12 +41,14 @@ COLLECTIVE_PIVOT_FIXTURE = CollectivePivotLayer()
 
 
 COLLECTIVE_PIVOT_INTEGRATION_TESTING = IntegrationTesting(
-    bases=(COLLECTIVE_PIVOT_FIXTURE,), name="CollectivePivotLayer:IntegrationTesting",
+    bases=(COLLECTIVE_PIVOT_FIXTURE,),
+    name="CollectivePivotLayer:IntegrationTesting",
 )
 
 
 COLLECTIVE_PIVOT_FUNCTIONAL_TESTING = FunctionalTesting(
-    bases=(COLLECTIVE_PIVOT_FIXTURE,), name="CollectivePivotLayer:FunctionalTesting",
+    bases=(COLLECTIVE_PIVOT_FIXTURE,),
+    name="CollectivePivotLayer:FunctionalTesting",
 )
 
 

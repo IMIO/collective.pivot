@@ -23,7 +23,9 @@ def post_install(context):
     site = api.portal.get()
     if not site.get(PIVOT_FOLDER):
         folder = api.content.create(
-            type="Folder", container=site, title=_(PIVOT_FOLDER, context=site),
+            type="Folder",
+            container=site,
+            title=_(PIVOT_FOLDER, context=site),
         )
         add_default_categories(folder)
 

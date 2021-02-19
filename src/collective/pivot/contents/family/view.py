@@ -11,8 +11,7 @@ logger = logging.getLogger("Plone")
 
 
 class ViewView(BrowserView):
-    """
-    """
+    """"""
 
     @property
     def settings(self):

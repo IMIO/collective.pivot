@@ -135,5 +135,8 @@ class PivotEndpointGet(Service):
     def render(self):
         related_items = PivotEndpoint(self.context, self.request)
         return json.dumps(
-            related_items(), indent=2, sort_keys=True, separators=(", ", ": "),
+            related_items(),
+            indent=2,
+            sort_keys=True,
+            separators=(", ", ": "),
         )

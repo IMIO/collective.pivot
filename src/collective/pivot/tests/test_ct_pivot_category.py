@@ -46,7 +46,9 @@ class FamilyIntegrationTest(unittest.TestCase):
     def test_ct_Family_adding(self):
         setRoles(self.portal, TEST_USER_ID, ["Contributor"])
         obj = api.content.create(
-            container=self.portal, type="collective.pivot.Family", id="Family",
+            container=self.portal,
+            type="collective.pivot.Family",
+            id="Family",
         )
 
         parent = obj.__parent__
@@ -68,10 +70,15 @@ class FamilyIntegrationTest(unittest.TestCase):
         fti = queryUtility(IDexterityFTI, name="collective.pivot.Family")
         portal_types = self.portal.portal_types
         parent_id = portal_types.constructContent(
-            fti.id, self.portal, "Family_id", title="Family container",
+            fti.id,
+            self.portal,
+            "Family_id",
+            title="Family container",
         )
         self.parent = self.portal[parent_id]
         with self.assertRaises(InvalidParameterError):
             api.content.create(
-                container=self.parent, type="Document", title="My Content",
+                container=self.parent,
+                type="Document",
+                title="My Content",
             )
