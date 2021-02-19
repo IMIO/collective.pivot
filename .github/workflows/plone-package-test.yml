@@ -62,12 +62,14 @@ jobs:
         python-version: ${{ matrix.python-version }}
 
     - name: Install dependencies and run buildout
+      run: sed -ie "s#test_plonex.x.cfg#test_plone${{ matrix.plone-version }}.cfg#" ci.cfg
       run: |
         sudo apt-get install -qq -y python3-dev
         python -m pip install --upgrade pip
         pip install -r requirements.txt coveralls
-        ln -fs test_plone${{ matrix.plone-version }} buildout.cfg
         buildout -Nt 5
+      env:
+        CI: true
 
     - name: Test
       run: |
