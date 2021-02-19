@@ -11,12 +11,12 @@ bin/pip3:
 
 bin/buildout: bin/pip
 	ln -fs test_plone43.cfg buildout.cfg
-	./bin/pip install -r requirements43.txt
+	./bin/pip install -r requirements.txt
 	touch $@
 
 bin/buildout3: bin/pip3
 	ln -fs test_plone52.cfg buildout.cfg
-	./bin/pip3 install -r requirements52.txt
+	./bin/pip3 install -r requirements.txt
 	touch $@
 
 build_plone43: bin/buildout
