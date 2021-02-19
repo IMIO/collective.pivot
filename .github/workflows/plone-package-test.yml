@@ -66,9 +66,30 @@ jobs:
         sed -ie "s#test_plonex.x.cfg#test_plone${{ matrix.plone-version }}.cfg#" ci.cfg
         sudo apt-get install -qq -y python3-dev
         python -m pip install --upgrade pip
-        pip install -r requirements.txt coveralls
+        pip install -r requirements.txt
         buildout -Nt 5 -c ci.cfg
 
+  coverage:
+    runs-on: ubuntu-18.04
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: [3.8]
+        plone-version: [5.2]
+    steps:
+    - name: Clone repo
+      uses: actions/checkout@v2
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install dependencies and run buildout
+      run: |
+        sed -ie "s#test_plonex.x.cfg#test_plone${{ matrix.plone-version }}.cfg#" ci.cfg
+        sudo apt-get install -qq -y python3-dev
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        buildout -Nt 5 -c ci.cfg 
     - name: Test
       run: |
         bin/test
