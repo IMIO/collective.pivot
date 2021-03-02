@@ -33,7 +33,7 @@ msgstr "Cliquez ici pour finaliser la configuration."
 #: ../setuphandlers.py:56
 #: ../vocabularies.py:17
 msgid "Events"
-msgstr ""
+msgstr "Évènements"
 
 #: ../setuphandlers.py:41
 #: ../vocabularies.py:11
@@ -63,7 +63,7 @@ msgstr "Famille Pivot"
 
 #: ../contents/family/content.pt:15
 msgid "Pivot family"
-msgstr ""
+msgstr "Famille Pivot"
 
 #: ../setuphandlers.py:61
 #: ../vocabularies.py:18
