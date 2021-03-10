@@ -5,7 +5,9 @@ Changelog
 1.0a6 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- remove useless plone.app.referenceablebehavior (bring archetypes!)
+- update translations
+  [boulch]
 
 
 1.0a5 (2021-02-03)
