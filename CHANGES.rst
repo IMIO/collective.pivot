@@ -5,7 +5,8 @@ Changelog
 1.0a7 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Use translate instead of ITranslationDomain
+  [boulch]
 
 
 1.0a6 (2021-03-10)
