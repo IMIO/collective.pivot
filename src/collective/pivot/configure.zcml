@@ -18,39 +18,9 @@
 
   <include package=".browser" />
   <include package=".contents" />
+  <include package=".upgrades" />
   <include file="permissions.zcml" />
-
-
-  <genericsetup:registerProfile
-      name="default"
-      title="collective.pivot"
-      directory="profiles/default"
-      description="Installs the collective.pivot add-on."
-      provides="Products.GenericSetup.interfaces.EXTENSION"
-      post_handler=".setuphandlers.post_install"
-      />
-
-  <genericsetup:registerProfile
-      name="content"
-      title="Add collective.pivot content"
-      directory="profiles/content"
-      description="Add default categories for collective.pivot"
-      provides="Products.GenericSetup.interfaces.EXTENSION"
-      />
-
-  <genericsetup:registerProfile
-      name="uninstall"
-      title="collective.pivot (uninstall)"
-      directory="profiles/uninstall"
-      description="Uninstalls the collective.pivot add-on."
-      provides="Products.GenericSetup.interfaces.EXTENSION"
-      post_handler=".setuphandlers.uninstall"
-      />
-
-  <utility
-      factory=".setuphandlers.HiddenProfiles"
-      name="collective.pivot-hiddenprofiles"
-      />
+  <include file="profiles.zcml" />
 
   <utility
       name="collective.pivot.vocabularies.Families"
