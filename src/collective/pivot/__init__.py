@@ -3,5 +3,6 @@
 from plone import api
 from zope.i18nmessageid import MessageFactory
 
-HAS_PLONE_5 = api.env.plone_version().startswith("5")
+HAS_PLONE_5_AND_MORE = api.env.plone_version().startswith('5') or api.env.plone_version().startswith('6')
+
 _ = MessageFactory("collective.pivot")
