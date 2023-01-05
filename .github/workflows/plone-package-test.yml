@@ -11,8 +11,6 @@ jobs:
         include:
           - python-version: 2.7
             plone-version: 4.3
-          - python-version: 3.7
-            plone-version: 5.2
           - python-version: 3.8
             plone-version: 5.2
           - python-version: 3.8
