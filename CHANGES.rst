@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.0a8 (unreleased)
+1.0b1 (2023-01-09)
 ------------------
 
 - Add plone6 profile to fix collective.pivot.Family icons

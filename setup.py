@@ -16,7 +16,7 @@ long_description = "\n\n".join(
 
 setup(
     name="collective.pivot",
-    version="1.0a8.dev0",
+    version="1.0b1",
     description="Display CGT Pivot informations",
     long_description=long_description,
     # Get more from https://pypi.org/classifiers/
