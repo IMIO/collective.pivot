@@ -8,7 +8,7 @@
 
   <genericsetup:registerProfile
       name="install-base"
-      title="collective.pivot"
+      title="collective.pivot installation"
       directory="profiles/base"
       description="Installs the collective.pivot add-on."
       provides="Products.GenericSetup.interfaces.EXTENSION"
@@ -24,6 +24,26 @@
       />
 
   <genericsetup:registerProfile
+      zcml:condition="not-have plone-5"
+      name="default"
+      title="collective.pivot plone4 installation"
+      directory="profiles/plone4"
+      description="Installs the collective.messagesviewlet add-on on Plone 4."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+  <configure zcml:condition="not-have plone-60">
+    <genericsetup:registerProfile
+        zcml:condition="have plone-5"
+        name="default"
+        title="collective.pivot plone5 installation"
+        directory="profiles/plone5"
+        description="Installs the collective.pivot add-on on Plone 5."
+        provides="Products.GenericSetup.interfaces.EXTENSION"
+        />
+  </configure>
+
+  <genericsetup:registerProfile
       zcml:condition="have plone-60"
       name="default"
       title="collective.pivot plone6 installation"
@@ -32,7 +52,16 @@
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 
+    <genericsetup:registerProfile
+      name="testing"
+      title="collective.pivot (testing))"
+      directory="profiles/testing"
+      description="Install collective.messagesviewlet.testing profile"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
   <genericsetup:registerProfile
+      zcml:condition="have plone-5"
       name="uninstall"
       title="collective.pivot (uninstall)"
       directory="profiles/uninstall"

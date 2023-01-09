@@ -12,12 +12,6 @@ if HAS_PLONE_5_AND_MORE:
 import unittest
 
 
-try:
-    from Products.CMFPlone.utils import get_installer
-except ImportError:
-    get_installer = None
-
-
 class TestSetup(unittest.TestCase):
     """Test that collective.pivot is properly installed."""
 
@@ -26,23 +20,22 @@ class TestSetup(unittest.TestCase):
     def setUp(self):
         """Custom shared utility setup for tests."""
         self.portal = self.layer["portal"]
-        if get_installer:
-            self.installer = get_installer(self.portal, self.layer["request"])
-        else:
+        if not HAS_PLONE_5_AND_MORE:
             self.installer = api.portal.get_tool("portal_quickinstaller")
+        else:
+            self.installer = get_installer(self.portal, self.layer["request"])
 
     def test_product_installed(self):
         """Test if collective.pivot is installed."""
         if not HAS_PLONE_5_AND_MORE:
-            self.assertTrue(self.installer.isProductInstalled('collective.pivot'))
+            self.assertTrue(self.installer.isProductInstalled("collective.pivot"))
         else:
-            self.assertTrue(self.installer.is_product_installed('collective.pivot'))
+            self.assertTrue(self.installer.is_product_installed("collective.pivot"))
 
     def test_browserlayer(self):
         """Test that ICollectivePivotLayer is registered."""
         from collective.pivot.interfaces import ICollectivePivotLayer
         from plone.browserlayer import utils
-
         self.assertIn(ICollectivePivotLayer, utils.registered_layers())
 
 
@@ -65,13 +58,12 @@ class TestUninstall(unittest.TestCase):
     def test_product_uninstalled(self):
         """Test if collective.pivot is cleanly uninstalled."""
         if not HAS_PLONE_5_AND_MORE:
-            self.assertFalse(self.installer.isProductInstalled('collective.pivot'))
+            self.assertFalse(self.installer.isProductInstalled("collective.pivot"))
         else:
-            self.assertFalse(self.installer.is_product_installed('collective.pivot'))
+            self.assertFalse(self.installer.is_product_installed("collective.pivot"))
 
     def test_browserlayer_removed(self):
         """Test that ICollectivePivotLayer is removed."""
         from collective.pivot.interfaces import ICollectivePivotLayer
         from plone.browserlayer import utils
-
         self.assertNotIn(ICollectivePivotLayer, utils.registered_layers())
