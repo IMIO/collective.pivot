@@ -5,7 +5,8 @@ Changelog
 1.0a8 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Add plone6 profile to fix collective.pivot.Family icons
+  [boulch]
 
 
 1.0a7 (2022-01-14)

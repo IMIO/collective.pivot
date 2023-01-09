@@ -14,9 +14,15 @@ class HiddenProfiles(object):
     def getNonInstallableProfiles(self):
         """Hide uninstall profile from site-creation and quickinstaller."""
         return [
+            "collective.pivot:install-base",
             "collective.pivot:uninstall",
         ]
 
+    def getNonInstallableProducts(self):
+        """Hide uninstall profile from site-creation and quickinstaller."""
+        return [
+            'collective.pivot.upgrades',
+        ]
 
 def post_install(context):
     """Post install script"""
