@@ -34,6 +34,22 @@ This one display listing and details of various tourist offers.
 It's also possible to add filters.
 
 
+Features
+--------
+
+This products contains:
+ - Content types : collective.pivot.Family;
+ - Specific control panel configuration : Webservice url, authentication key and zipcode fields
+ - Endpoint : To connect and get/query informations from CGT's DB PIVOT.
+ - View with react component to display pivot "cards"
+
+When Installing collective.pivot, it create a new "pivot" folder in Plone site root and it install 5 default families
+ - "Hosting";
+ - "Leisure / discovery";
+ - "Tourism organizations";
+ - "Events";
+ - "Terroir"
+
 Translations
 ------------
 
