@@ -5,6 +5,9 @@ Changelog
 1.0b2 (unreleased)
 ------------------
 
+- Fix translation function
+  [boulch]
+
 - Fix post_install when the targeted site not allow default Folder on plonesite root
   [boulch]
 
