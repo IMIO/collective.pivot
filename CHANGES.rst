@@ -5,7 +5,8 @@ Changelog
 1.0b2 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Fix post_install when the targeted site not allow default Folder on plonesite root
+  [boulch]
 
 
 1.0b1 (2023-01-09)

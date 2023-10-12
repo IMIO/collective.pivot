@@ -4,6 +4,7 @@ from collective.pivot.utils import _
 from collective.pivot.utils import add_family
 from plone import api
 from Products.CMFPlone.interfaces import INonInstallable
+from Products.CMFPlone.utils import _createObjectByType
 from zope.interface import implementer
 
 PIVOT_FOLDER = "Pivot"
@@ -28,9 +29,10 @@ def post_install(context):
     """Post install script"""
     site = api.portal.get()
     if not site.get(PIVOT_FOLDER):
-        folder = api.content.create(
-            type="Folder",
+        folder = _createObjectByType(
+            'Folder',
             container=site,
+            id="pivot",
             title=_(PIVOT_FOLDER, context=site),
         )
         add_default_categories(folder)
