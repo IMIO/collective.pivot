@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.0b2 (unreleased)
+1.0b2 (2023-10-12)
 ------------------
 
 - Fix translation function
