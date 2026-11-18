@@ -11,7 +11,7 @@ Install requirements with pip::
 
 Run buildout::
 
-    $ ./bin/buildout
+    $ ./bin/buildout -c test_plone6.2.cfg
 
 Start Plone in foreground:
 
@@ -26,14 +26,13 @@ Running tests
 list all tox environments:
 
     $ tox -l
-    py27-Plone43
-    py38-Plone52
-    build_instance
-    code-analysis
-    lint-py27
-    lint-py38
-    coverage-report
+    py312-lint
+    py310-Plone62
+    py311-Plone62
+    py312-Plone62
+    py313-Plone62
+    py314-Plone62
 
 run a specific tox env:
 
-    $ tox -e py38-Plone52
+    $ tox -e py314-Plone62
