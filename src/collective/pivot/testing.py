@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-from collective.pivot import HAS_PLONE_5_AND_MORE
 from collective.pivot.browser.controlpanel import IPivotSettings
 from plone import api
 from plone.app.robotframework.testing import REMOTE_LIBRARY_BUNDLE_FIXTURE

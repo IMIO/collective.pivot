@@ -5,7 +5,13 @@ Changelog
 1.0b3 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Breaking: migrate to PEP 420 native namespaces (setuptools 81 / Plone 6.2).
+  Drop Python 2 (Plone 4.3).
+  [bsuttor]
+
+- Breaking: drop Plone 5.2 and 6.0, and Python 3.8 and 3.9.
+  Add Python 3.10, 3.11, 3.13 and 3.14 support. Remove Plone 4/5 code paths.
+  [remdub]
 
 
 1.0b2 (2023-10-12)

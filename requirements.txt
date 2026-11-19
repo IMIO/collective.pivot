@@ -1,1 +1,1 @@
--r requirements_plone-6.0.x.txt
+-r requirements_plone-6.2.x.txt
